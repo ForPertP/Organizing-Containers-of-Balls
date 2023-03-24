@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+vector<string> split(const string &);
+
+/*
+ * Complete the 'organizingContainers' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts 2D_INTEGER_ARRAY container as parameter.
+ */
+
 string organizingContainers(vector<vector<int>> container)
 {
     std::vector<int> row_sum(container.size());
