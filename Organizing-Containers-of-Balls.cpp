@@ -32,3 +32,45 @@ string organizingContainers(vector<vector<int>> container)
 
     return (row_sum == col_sum) ? "Possible" : "Impossible";
 }
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string q_temp;
+    getline(cin, q_temp);
+
+    int q = stoi(ltrim(rtrim(q_temp)));
+
+    for (int q_itr = 0; q_itr < q; q_itr++) {
+        string n_temp;
+        getline(cin, n_temp);
+
+        int n = stoi(ltrim(rtrim(n_temp)));
+
+        vector<vector<int>> container(n);
+
+        for (int i = 0; i < n; i++) {
+            container[i].resize(n);
+
+            string container_row_temp_temp;
+            getline(cin, container_row_temp_temp);
+
+            vector<string> container_row_temp = split(rtrim(container_row_temp_temp));
+
+            for (int j = 0; j < n; j++) {
+                int container_row_item = stoi(container_row_temp[j]);
+
+                container[i][j] = container_row_item;
+            }
+        }
+
+        string result = organizingContainers(container);
+
+        fout << result << "\n";
+    }
+
+    fout.close();
+
+    return 0;
+}
