@@ -38,7 +38,6 @@ class Result {
         
         return Arrays.equals(rowSum, colSum) ? "Possible" : "Impossible";
     }
-
 }
 
 public class Solution {
